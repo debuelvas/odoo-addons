@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_list_traza_variable">
+            <field name="name">Variables anuales</field>
+            <field name="res_model">traza.variable</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_traza_variable" parent="hr_payroll.menu_hr_salary_configuration" name="Traza variable"
+                  action="action_list_traza_variable"/>
+
+        <record model="ir.ui.view" id="traza_variable_view">
+            <field name="name">traza_variable_tree</field>
+            <field name="model">traza.variable</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="fecha_desde" />
+                    <field name="fecha_hasta" />
+                    <field name="smlv" />
+                    <field name="smilv" />
+                    <field name="aux_trans" />
+                    <field name="valor_uvt" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

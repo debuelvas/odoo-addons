@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+        <record id="hr_employee_col_form__view_for" model="ir.ui.view">
+            <field name="name">Datos adicionales del empleado para Colombia</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+            <field name="priority">30</field>
+            <field name="arch" type="xml">
+            <data>
+               <xpath expr="//group[@name='active_group']" position="before">
+                 <group string="Afiliaciones">
+                    <field name="eps_id" help="EPS a la que se encuentra afiliado el empleado"/>
+                    <field name="fp_id" help="Fondo de Pensiones al que se encuentra afiliado el empleado"/>
+                    <field name="fc_id" help="Fondo de Cesantías al que se encuentra afiliado el empleado"/>
+                     <field name="ccf_id" help="Caja de compensacion familiar a la que se encuentra afiliado el empleado"/>
+                     <field name="exento_transporte" help="Exento subsidio de transporte(Trasportado por empresa o menos de un kilometro)"/>
+                 </group>
+                 <group string="Datos complementarios de nómina">
+                    <field name="nivel_arl" help="Nivel de riesgo establecido para el cargo"/>
+                    <field name="afc"/>
+                    <field name="avc"/>
+                    <field name="fpv"/>
+                    <field name="int_vivienda"/>
+                    <field name="med_prep"/>
+                    <field name="dependientes"/>
+                    <field name="pensionado"/>
+                 </group>
+               </xpath>
+
+                <xpath expr="//field[@name='address_home_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+
+            </data>
+            </field>
+        </record>
+    </data>
+</odoo>
